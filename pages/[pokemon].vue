@@ -42,18 +42,18 @@
           </h3>
 
         </div>
-        <p>
-          Abilities :
-        </p>
+        <h4>Abilities :</h4>
+        <div v-if="pokemonData">
+          <span v-for="ability in pokemonData.abilities" :key="ability.ability.name">
+          {{ ability.ability.name }} &nbsp;
+          </span>
+        </div>
       </div>
       <div>
         <h2>characteristic</h2>
         <ul v-if="pokemonData">
-          <li v-for="ability in pokemonData.abilities" :key="ability.ability.name">
-            Abilities : {{ ability.ability.name }}
-          </li>
           <li>
-            HP : {{pokemonData.stats[0].base_stat}}
+            <span>HP : {{pokemonData.stats[0].base_stat}}</span>
             <div class="barre">
               <div v-if="pokemonData.stats[0].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
               <div v-if="pokemonData.stats[0].base_stat > 25 & pokemonData.stats[0].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
@@ -62,58 +62,50 @@
             </div>
           </li>
           <li>
-            Attack : {{pokemonData.stats[1].base_stat}}
+            <span>Attack : {{pokemonData.stats[1].base_stat}}</span>
             <div class="barre">
-              <div v-if="pokemonData.stats[1].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
-              <div v-if="pokemonData.stats[1].base_stat > 25 & pokemonData.stats[1].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
-              <div v-if= "pokemonData.stats[1].base_stat >= 50 & pokemonData.stats[1].base_stat <= 100" class="couleur2" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
-              <div v-if= "pokemonData.stats[1].base_stat > 100" class="couleur3" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[1].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[1].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[1].base_stat > 25 & pokemonData.stats[1].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[1].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[1].base_stat >= 50 & pokemonData.stats[1].base_stat <= 100" class="couleur2" :style="{width: pokemonData.stats[1].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[1].base_stat > 100" class="couleur3" :style="{width: pokemonData.stats[1].base_stat + 'px'}"></div>
             </div>
           </li>
           <li>
-            defense : {{pokemonData.stats[2].base_stat}}
+            <span>defense : {{pokemonData.stats[2].base_stat}}</span>
             <div class="barre">
-              <div v-if="pokemonData.stats[2].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
-              <div v-if="pokemonData.stats[2].base_stat > 25 & pokemonData.stats[2].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
-              <div v-if= "pokemonData.stats[2].base_stat >= 50 & pokemonData.stats[2].base_stat <= 100" class="couleur2" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
-              <div v-if= "pokemonData.stats[2].base_stat > 100" class="couleur3" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[2].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[2].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[2].base_stat > 25 & pokemonData.stats[2].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[2].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[2].base_stat >= 50 & pokemonData.stats[2].base_stat <= 100" class="couleur2" :style="{width: pokemonData.stats[2].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[2].base_stat > 100" class="couleur3" :style="{width: pokemonData.stats[2].base_stat + 'px'}"></div>
             </div>
           </li>
           <li>
-            special-attack : {{pokemonData.stats[3].base_stat}}
+            <span>special-attack : {{pokemonData.stats[3].base_stat}}</span>
             <div class="barre">
-              <div v-if="pokemonData.stats[3].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
-              <div v-if="pokemonData.stats[3].base_stat > 25 & pokemonData.stats[3].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
-              <div v-if= "pokemonData.stats[3].base_stat >= 50 & pokemonData.stats[3].base_stat <= 100" class="couleur2" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
-              <div v-if= "pokemonData.stats[3].base_stat > 100" class="couleur3" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[3].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[3].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[3].base_stat > 25 & pokemonData.stats[3].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[3].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[3].base_stat >= 50 & pokemonData.stats[3].base_stat <= 100" class="couleur2" :style="{width: pokemonData.stats[3].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[3].base_stat > 100" class="couleur3" :style="{width: pokemonData.stats[3].base_stat + 'px'}"></div>
             </div>
           </li>
           <li>
-            special-defense : {{pokemonData.stats[4].base_stat}}
+            <span>special-defense : {{pokemonData.stats[4].base_stat}}</span>
             <div class="barre">
-              <div v-if="pokemonData.stats[4].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
-              <div v-if="pokemonData.stats[4].base_stat > 25 & pokemonData.stats[4].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
-              <div v-if= "pokemonData.stats[4].base_stat >= 50 & pokemonData.stats[4].base_stat <= 100" class="couleur2" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
-              <div v-if= "pokemonData.stats[4].base_stat > 100" class="couleur3" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[4].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[4].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[4].base_stat > 25 & pokemonData.stats[4].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[4].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[4].base_stat >= 50 & pokemonData.stats[4].base_stat <= 100" class="couleur2" :style="{width: pokemonData.stats[4].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[4].base_stat > 100" class="couleur3" :style="{width: pokemonData.stats[4].base_stat + 'px'}"></div>
             </div>
           </li>
           <li>
-            speed : {{pokemonData.stats[5].base_stat}}
+            <span>speed : {{pokemonData.stats[5].base_stat}}</span>
             <div class="barre">
-              <div v-if="pokemonData.stats[5].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
-              <div v-if="pokemonData.stats[5].base_stat > 25 & pokemonData.stats[5].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
-              <div v-if= "pokemonData.stats[5].base_stat >= 50 & pokemonData.stats[5].base_stat <= 100" class="couleur2" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
-              <div v-if= "pokemonData.stats[5].base_stat > 100" class="couleur3" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[5].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[5].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[5].base_stat > 25 & pokemonData.stats[5].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[5].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[5].base_stat >= 50 & pokemonData.stats[5].base_stat <= 100" class="couleur2" :style="{width: pokemonData.stats[5].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[5].base_stat > 100" class="couleur3" :style="{width: pokemonData.stats[5].base_stat + 'px'}"></div>
             </div>
           </li>
-          <li v-if="pokemonData.types.length > 1">
-            type : {{pokemonData.types[0].type.name}}
-            {{pokemonData.types[1].type.name}}
-          </li>
-          <li v-else>
-            type : {{pokemonData.types[0].type.name}}
-          </li>
-
         </ul>
       </div>
     </div>
@@ -129,22 +121,26 @@
   .couleur1 {
     height: 20px;
     background: red;
+    max-width: 100px;
   }
 
   .couleur2 {
     height: 20px;
     background: green;
+    max-width: 100px;
   }
 
   .couleur4 {
     height: 20px;
     background: orange;
+    max-width: 100px;
   }
 
   .couleur3 {
     height: 20px;
     background: rgb(226,13,176);
     background: linear-gradient(45deg, rgba(226,13,176,1) 0%, rgba(121,9,112,1) 51%, rgba(0,212,255,1) 100%);
+    max-width: 100px;
   }
 
   .center {
