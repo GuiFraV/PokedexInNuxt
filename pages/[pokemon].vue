@@ -55,9 +55,10 @@
           <li>
             HP : {{pokemonData.stats[0].base_stat}}
             <div class="barre">
-              <div v-if= "pokemonData.stats[0].base_stat > 50 & pokemonData.stats[0].base_stat < 100" class="couleur1" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[0].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[0].base_stat > 25 & pokemonData.stats[0].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[0].base_stat >= 50 & pokemonData.stats[0].base_stat <= 100" class="couleur2" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
               <div v-if= "pokemonData.stats[0].base_stat > 100" class="couleur3" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
-              <div v-else class="couleur2" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
             </div>
           </li>
           <li>
@@ -97,13 +98,19 @@
 
   .couleur1 {
     height: 20px;
-    background: green;
+    background: red;
   }
 
   .couleur2 {
     height: 20px;
-    background: red;
+    background: green;
   }
+
+  .couleur4 {
+    height: 20px;
+    background: orange;
+  }
+
   .couleur3 {
     height: 20px;
     background: rgb(226,13,176);
