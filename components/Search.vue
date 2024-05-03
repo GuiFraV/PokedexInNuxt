@@ -5,9 +5,14 @@ import { useRouter } from 'vue-router';
 const word = ref('');
 const router = useRouter();
 
-const addNew = () => {
+const addNew = async () => {
     if (word.value !== "") {
-        router.push(`/${word.value}`);
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${word.value.toLowerCase()}`);
+        if (response.ok) {
+            router.push(`/${word.value.toLowerCase()}`);
+        } else {
+            router.push('/error');
+        }
     }
 }
 </script>
