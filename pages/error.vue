@@ -3,6 +3,10 @@ const goBack = () => {
     window.history.back();
 }
 
+definePageMeta({
+    layout: 'error'
+  })
+
 </script>
 
 <template>
