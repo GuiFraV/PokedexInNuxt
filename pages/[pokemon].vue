@@ -22,7 +22,7 @@ fetchPokemons();
         <p>{{ pokemon }}</p>
         <ul v-if="pokemonData">
           <li v-for="ability in pokemonData.abilities" :key="ability.ability.name">
-            {{ ability.ability.name }}
+            Abilities : {{ ability.ability.name }}
           </li>
           <li>
             HP : {{pokemonData.stats[0].base_stat}}
