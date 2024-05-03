@@ -32,10 +32,11 @@ onMounted(fetchPokemons);
                     <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
                     <div class="card__header-text">
                         <h3 class="card__title">{{ pokemon.name }}</h3>            
+                        <h3 class="card__title">{{ pokemon.id }}</h3>            
                         <span class="card__status card_text">Type: <span class="card_text" v-for="(type, index) in pokemon.types" :key="index">{{ type.type.name }} &nbsp;</span></span>
                     </div>
                     </div>
-                    <p class="card__description">Description</p>
+                    <p class="card__description"><button class="view">View</button></p>
                 </div>
                 </a>      
             </li>
@@ -45,6 +46,16 @@ onMounted(fetchPokemons);
 </template>
 
 <style>
+
+.view {
+  background-color: #6A515E;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 :root {
   --surface-color: #fff;
   --curve: 40;
