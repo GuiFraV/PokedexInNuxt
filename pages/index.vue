@@ -5,5 +5,4 @@
 <template>
   <Search />
   <List />
-  <Card />
 </template>
