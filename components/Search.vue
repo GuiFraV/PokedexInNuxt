@@ -1,8 +1,8 @@
 <template>
 
-    <form>
+    <form action="/card">
         <input type="text" placeholder="Search..">
-        <button type=""submit>Search</button>
+        <button type="submit">Search</button>
     </form>
 
 </template>
