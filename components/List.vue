@@ -25,7 +25,7 @@ onMounted(fetchPokemons);
       <ul class="cards">
       <div v-for="(pokemon, index) in pokemons" :key="index">
     <li>
-                <a href="" class="card">
+                <div class="card">
                 <img :src="pokemon.sprites.front_default" alt="pokemon.name" class="card__image" />
                 <div class="card__overlay">
                     <div class="card__header">
@@ -38,7 +38,7 @@ onMounted(fetchPokemons);
                     <nuxt-link :to="'/' + pokemon.id">
                     <p class="card__description"><button class="view">View</button></p></nuxt-link>
                 </div>
-                </a>      
+              </div>      
             </li>
   </div>
         </ul>
