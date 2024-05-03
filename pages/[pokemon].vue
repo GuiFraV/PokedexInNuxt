@@ -42,9 +42,12 @@ fetchPokemons();
           <li>
             speed : {{pokemonData.stats[5].base_stat}}
           </li>
-          <li>
+          <li v-if="pokemonData.types.length > 1">
             type : {{pokemonData.types[0].type.name}}
             {{pokemonData.types[1].type.name}}
+          </li>
+          <li v-else>
+            type : {{pokemonData.types[0].type.name}}
           </li>
 
         </ul>
