@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <List />
   <Search />
+  <List />
   <Card />
 </template>

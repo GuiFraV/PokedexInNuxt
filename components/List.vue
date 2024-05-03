@@ -31,12 +31,12 @@ onMounted(fetchPokemons);
                     <div class="card__header">
                     <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
                     <div class="card__header-text">
-                        <h3 class="card__title">{{ pokemon.name }}</h3>            
-                        <h3 class="card__title">{{ pokemon.id }}</h3>            
+                        <h3 class="card__title">{{ pokemon.name }}</h3>                       
                         <span class="card__status card_text">Type: <span class="card_text" v-for="(type, index) in pokemon.types" :key="index">{{ type.type.name }} &nbsp;</span></span>
                     </div>
                     </div>
-                    <p class="card__description"><button class="view">View</button></p>
+                    <nuxt-link to="/card/ + {{ pokemon.id }}">
+                    <p class="card__description"><button class="view">View</button></p></nuxt-link>
                 </div>
                 </a>      
             </li>
