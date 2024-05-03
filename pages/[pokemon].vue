@@ -32,7 +32,7 @@
           <img v-if="pokemonData && pokemonData.sprites && pokemonData.sprites.front_default" :src="pokemonData.sprites.front_default" />
           <img v-if="pokemonData && pokemonData.sprites && pokemonData.sprites.front_shiny" :src="pokemonData.sprites.front_shiny" />
         </span>
-        <h2>{{ pokemon }}</h2>
+        <h2 v-if="pokemonData">{{ pokemon }} - {{ pokemonData.name }}</h2>
         <div v-if="pokemonData">
           <h3 v-if="pokemonData.types.length > 1">
             Type : {{pokemonData.types[0].type.name}}
@@ -161,5 +161,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  ul {
+    list-style-type: none;
   }
 </style>
