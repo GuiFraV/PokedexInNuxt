@@ -63,18 +63,48 @@
           </li>
           <li>
             Attack : {{pokemonData.stats[1].base_stat}}
+            <div class="barre">
+              <div v-if="pokemonData.stats[1].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[1].base_stat > 25 & pokemonData.stats[1].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[1].base_stat >= 50 & pokemonData.stats[1].base_stat <= 100" class="couleur2" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[1].base_stat > 100" class="couleur3" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+            </div>
           </li>
           <li>
             defense : {{pokemonData.stats[2].base_stat}}
+            <div class="barre">
+              <div v-if="pokemonData.stats[2].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[2].base_stat > 25 & pokemonData.stats[2].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[2].base_stat >= 50 & pokemonData.stats[2].base_stat <= 100" class="couleur2" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[2].base_stat > 100" class="couleur3" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+            </div>
           </li>
           <li>
             special-attack : {{pokemonData.stats[3].base_stat}}
+            <div class="barre">
+              <div v-if="pokemonData.stats[3].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[3].base_stat > 25 & pokemonData.stats[3].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[3].base_stat >= 50 & pokemonData.stats[3].base_stat <= 100" class="couleur2" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[3].base_stat > 100" class="couleur3" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+            </div>
           </li>
           <li>
             special-defense : {{pokemonData.stats[4].base_stat}}
+            <div class="barre">
+              <div v-if="pokemonData.stats[4].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[4].base_stat > 25 & pokemonData.stats[4].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[4].base_stat >= 50 & pokemonData.stats[4].base_stat <= 100" class="couleur2" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[4].base_stat > 100" class="couleur3" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+            </div>
           </li>
           <li>
             speed : {{pokemonData.stats[5].base_stat}}
+            <div class="barre">
+              <div v-if="pokemonData.stats[5].base_stat <= 25" class="couleur1" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if="pokemonData.stats[5].base_stat > 25 & pokemonData.stats[5].base_stat < 50" class="couleur4" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[5].base_stat >= 50 & pokemonData.stats[5].base_stat <= 100" class="couleur2" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+              <div v-if= "pokemonData.stats[5].base_stat > 100" class="couleur3" :style="{width: pokemonData.stats[0].base_stat + 'px'}"></div>
+            </div>
           </li>
           <li v-if="pokemonData.types.length > 1">
             type : {{pokemonData.types[0].type.name}}
