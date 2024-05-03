@@ -1,35 +1,45 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
+import { onMounted, ref } from 'vue';
 
-defineProps({
-  name: {
-    type: String,
-    default: 'John'
-  },
-})
+const pokemons = ref([]);
+
+async function fetchPokemons() {
+  const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
+  const data = await response.json();
+  const promises = data.results.map(async (pokemon) => {
+    const response = await fetch(pokemon.url);
+    return await response.json();
+  });
+  pokemons.value = await Promise.all(promises);
+  console.log(pokemons.value);
+}
+
+onMounted(fetchPokemons);
+
 
 </script>
 
 
 <template>
     <div>
-      <span>Nom : {{ name }}</span>
-        <ul class="cards">
-            <li>
+      <ul class="cards">
+      <div v-for="(pokemon, index) in pokemons" :key="index">
+    <li>
                 <a href="" class="card">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" class="card__image" alt="" />
+                <img :src="pokemon.sprites.front_default" alt="pokemon.name" class="card__image" />
                 <div class="card__overlay">
                     <div class="card__header">
                     <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
                     <div class="card__header-text">
-                        <h3 class="card__title">Name</h3>            
-                        <span class="card__status">Type</span>
+                        <h3 class="card__title">{{ pokemon.name }}</h3>            
+                        <span class="card__status card_text">Type: <span class="card_text" v-for="(type, index) in pokemon.types" :key="index">{{ type.type.name }} &nbsp;</span></span>
                     </div>
                     </div>
                     <p class="card__description">Description</p>
                 </div>
                 </a>      
-            </li> 
+            </li>
+  </div>
         </ul>
     </div>
 </template>
@@ -153,5 +163,8 @@ body {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+}
+.card_text {
+  color: #6A515E;
 }    
 </style>
