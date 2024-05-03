@@ -35,7 +35,7 @@ onMounted(fetchPokemons);
                         <span class="card__status card_text">Type: <span class="card_text" v-for="(type, index) in pokemon.types" :key="index">{{ type.type.name }} &nbsp;</span></span>
                     </div>
                     </div>
-                    <nuxt-link :to="'/pokemon/' + pokemon.id">
+                    <nuxt-link :to="'/' + pokemon.id">
                     <p class="card__description"><button class="view">View</button></p></nuxt-link>
                 </div>
                 </a>      
