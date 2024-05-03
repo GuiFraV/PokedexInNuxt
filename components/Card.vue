@@ -1,3 +1,3 @@
 <template>
-    <h1>Card</h1>
+    <h1>Titre</h1>
 </template>
