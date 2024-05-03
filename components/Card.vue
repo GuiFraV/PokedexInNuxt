@@ -1,5 +1,3 @@
 <template>
-    <div>
-        <h1>Salut CHEF</h1>
-    </div>
+    <h1>Card</h1>
 </template>
