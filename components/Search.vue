@@ -13,6 +13,40 @@ const addNew = () => {
 </script>
 
 <template>
-    <input v-model="word" type="text" placeholder="Enter search term" />
-    <button @click="addNew">Search</button>
+    <header>
+        <input v-model="word" type="text" placeholder="Enter search term" />
+        <button class="search" @click="addNew">Search</button>
+    </header>
 </template>
+
+<style>
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+}
+
+    .search {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #333;
+        color: white;
+        cursor: pointer;
+    }
+
+    .search:hover {
+        background-color: #444;
+    }
+
+</style>
