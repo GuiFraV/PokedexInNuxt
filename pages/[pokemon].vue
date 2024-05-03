@@ -29,7 +29,8 @@
 
       <div>
         <span class="icon">
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/58.png">
+          <img v-if="pokemonData && pokemonData.sprites && pokemonData.sprites.front_default" :src="pokemonData.sprites.front_default" />
+          <img v-if="pokemonData && pokemonData.sprites && pokemonData.sprites.front_shiny" :src="pokemonData.sprites.front_shiny" />
         </span>
         <h2>{{ pokemon }}</h2>
         <div v-if="pokemonData">

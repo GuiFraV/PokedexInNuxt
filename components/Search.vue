@@ -14,7 +14,7 @@ const addNew = () => {
 
 <template>
     <header>
-        <input v-model="word" type="text" placeholder="Enter search term" />
+        <input v-model="word" type="text" placeholder="Enter search" />
         <button class="search" @click="addNew">Search</button>
     </header>
 </template>
