@@ -17,6 +17,7 @@ onMounted(fetchPokemons);
 </script>
 
 <template>
+  <Card />
   <div v-for="(pokemon, index) in pokemons" :key="index">
     <h2>{{ pokemon.name }}</h2>
     <img :src="pokemon.sprites.front_default" alt="pokemon.name" />
