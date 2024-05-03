@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { onMounted, ref } from 'vue';
 
 const pokemons = ref([]);
@@ -17,6 +17,7 @@ onMounted(fetchPokemons);
 </script>
 
 <template>
+  <List name="test" />
   <Search />
   <Card />
   <div v-for="(pokemon, index) in pokemons" :key="index">

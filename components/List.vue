@@ -1,5 +1,19 @@
+<script setup lang="ts">
+import { defineProps } from 'vue'
+
+defineProps({
+  name: {
+    type: String,
+    default: 'John'
+  },
+})
+
+</script>
+
+
 <template>
     <div>
+      <span>Nom : {{ name }}</span>
         <ul class="cards">
             <li>
                 <a href="" class="card">
