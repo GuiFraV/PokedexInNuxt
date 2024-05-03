@@ -14,7 +14,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #2a2b2e;
+    background-color: #2a2b2e !important;
 }
 
 h1, h2, h3, h4, h5, h6, p, span, a {
